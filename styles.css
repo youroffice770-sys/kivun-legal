@@ -381,9 +381,19 @@ section { padding: 3rem 0; }
 .relate.is-after .relate-after { display: inline; }
 .relate.is-after .relate-x { background: #DCFCE7; color: #16A34A; }
 
+/* overflow-x:hidden here (not just the existing html-level one) is load-
+   bearing, confirmed on a real Android device profile: rows below the fold
+   sit in their pre-reveal translateX(±40px) position (correct - they
+   haven't scrolled into view yet), and on Chrome's mobile viewport-sizing
+   pass that off-screen paint area alone was enough to make the browser
+   decide the page needs to be wider than the screen, rendering the ENTIRE
+   page zoomed out to fit it - even though html's own overflow-x:hidden
+   already existed. Containing it right at the source, not just at the
+   document root, is what actually fixed it. */
 .relate-list {
   list-style: none; max-width: 34rem; margin: 0 auto; display: flex;
   flex-direction: column; gap: .85rem;
+  overflow-x: hidden;
 }
 .relate-list li {
   display: flex; align-items: center; gap: .75rem;
