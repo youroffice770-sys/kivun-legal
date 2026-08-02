@@ -1,45 +1,303 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
+<script>document.documentElement.className += " js";</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kivun (כיוון)</title>
-<style>
-  :root { color-scheme: light }
-  * { box-sizing: border-box }
-  body {
-    margin: 0; padding: 2rem 1.25rem 4rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    font-size: 17px; line-height: 1.7; color: #1A2233; background: #F7F4EE;
-    -webkit-text-size-adjust: 100%;
-  }
-  main { max-width: 42rem; margin: 0 auto }
-  h1 { font-size: 1.65rem; line-height: 1.3; margin: 0 0 1.5rem }
-  h2 { font-size: 1.2rem; margin: 2.25rem 0 .6rem; color: #285ABC }
-  h3 { font-size: 1.05rem; margin: 1.5rem 0 .4rem }
-  p { margin: 0 0 .9rem }
-  ul { margin: 0 0 1.1rem; padding-inline-start: 1.3rem }
-  li { margin: 0 0 .35rem }
-  strong { font-weight: 700 }
-  nav { margin: 0 0 2rem; padding-bottom: 1rem; border-bottom: 1px solid #E0DACE; font-size: .95rem }
-  nav a { color: #285ABC; text-decoration: none; margin-inline-end: 1.1rem }
-  nav a:hover { text-decoration: underline }
-  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid #E0DACE; font-size: .9rem; color: #5A6376 }
-  @media (max-width: 420px) { body { font-size: 16px; padding: 1.5rem 1rem 3rem } }
-</style>
+<title>Kivun (כיוון) - היומן שמנווט את השליחות שלך</title>
+<meta name="description" content="תכנון מודרך, לוח שנה חב״די אוטומטי ותזכורות מדויקות - הכל באפליקציה אחת לשלוחים ולשלוחות. שבוע ראשון חינם.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Kivun - חזרה לראש הדף">
+      <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="pinGrad-header" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#285ABC"/>
+        </linearGradient></defs>
+        <path d="M50 8C31 8 16 22 16 41c0 22 26 43 34 50 8-7 34-28 34-50C84 22 69 8 50 8Z" fill="url(#pinGrad-header)"/>
+        <g transform="translate(50 40) scale(1.16) translate(-50 -40)" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M37 40 L46 49 L65 30"/>
+          <path d="M65 30 l-14 0.7 M65 30 l-0.7 14"/>
+        </g>
+      </svg>
+      <span class="brand-name">Kivun</span>
+    </a>
+    <a class="btn btn-primary btn-sm" href="#hero-stores">הורידו את Kivun</a>
+  </div>
+</header>
 <main>
-<h1>Kivun (כיוון)</h1>
-<p>היומן שמנווט את השליחות שלך. אפליקציה לשלוחים ולשלוחות, ל-iPhone ולאנדרואיד.</p>
-<h2>מסמכים</h2>
-<ul>
-  <li><a href="./terms.html">תנאי שימוש</a> · <a href="./terms.en.html">Terms of Use</a></li>
-  <li><a href="./privacy.html">מדיניות פרטיות</a> · <a href="./privacy.en.html">Privacy Policy</a></li>
-</ul>
-<h2>יצירת קשר</h2>
-<p>Pesya Wenkert · youroffice770@gmail.com</p>
-<footer>Kivun (כיוון)</footer>
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-route" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="hero-route-line" d="M40 340 C 200 260, 260 320, 380 220 S 640 80, 760 100" />
+  </svg>
+  <span class="hero-route-dot" aria-hidden="true"></span>
+  <div class="wrap hero-row">
+    <div class="hero-copy">
+      <span class="badge">✨ שבוע ראשון חינם</span>
+      <h1><span class="hero-word hero-word-1">לשליחות שלך</span><br><span class="hero-word hero-word-2">יש כיוון</span></h1>
+      <p class="hero-sub">Kivun מלווה אתכם לאורך כל השנה - עוזר לתכנן, להציב יעדים ולהוציא אותם לפועל. לא עוד יומן ריק שאתם צריכים למלא - הוא כבר בונה לכם את המסלול ומוביל אתכם צעד אחר צעד.</p>
+      <div class="store-row" id="hero-stores">
+        <!-- STORE-LINK: App Store - להחליף כשהאפליקציה מאושרת -->
+        <a class="btn-store" href="#app-store-pending" data-store="appstore">הורידו מ-App Store</a>
+        <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Google Play - בקרוב</span>
+      </div>
+    </div>
+    <div class="hero-demo">
+      <div class="demo-card">
+        <div class="demo-head"><span>היום שלך · יום חמישי</span><span class="demo-stamp">עודכן עכשיו</span></div>
+        <div class="demo-body">
+          <div class="demo-item" style="animation-delay:.15s">
+            <span class="demo-dot" style="background:#285ABC">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3.3M12 17.7V21M3 12h3.3M17.7 12H21"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>🧭 זמן לתכנן שנה</b><span>לקראת תשפ״ז</span></span>
+          </div>
+          <button type="button" class="demo-item demo-task" style="animation-delay:.55s" aria-pressed="false">
+            <span class="demo-dot" style="background:#FF5D8F">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 9.5l1.5 1.5 3-3"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>להתקשר לתורם</b><span>היום</span></span>
+          </button>
+          <button type="button" class="demo-item demo-task" style="animation-delay:.95s" aria-pressed="false">
+            <span class="demo-dot" style="background:#FF5D8F">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 12.5l1.5 1.5 3-3"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>להכין את הסעודה לשבת</b><span>מחר</span></span>
+          </button>
+        </div>
+      </div>
+      <p class="demo-hint">👆 נסו ללחוץ על משימה</p>
+    </div>
+  </div>
+</section>
+<!-- /HERO -->
+<!-- RELATE -->
+<section class="relate" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">מכירים את זה?</h2>
+    <button type="button" class="relate-toggle" aria-pressed="false">
+      <span class="relate-toggle-label relate-toggle-label--before">מבולגן</span>
+      <span class="relate-toggle-track" aria-hidden="true"><span class="relate-toggle-thumb"></span></span>
+      <span class="relate-toggle-label relate-toggle-label--after">עם Kivun</span>
+    </button>
+    <ul class="relate-list">
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">התחייבויות ותרומות מפוזרות באקסל, בוואטסאפ ובראש</span><span class="relate-after">כל התחייבות ותרומה במקום אחד, מתוזמנת ומעודכנת</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">היעדים והמשימות נשארים רק בראש</span><span class="relate-after">היעדים שלכם משובצים, עם תזכורת בזמן הנכון</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">כל חג או אירוע מרגיש כמו הפתעה</span><span class="relate-after">כל חג ואירוע מוכן מראש, בלי הפתעות</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">אתם עושים הכל לבד ואין רגע לנשום</span><span class="relate-after">Kivun זוכר בשבילכם, ואתם סוף סוף נושמים</span></li>
+    </ul>
+  </div>
+</section>
+<!-- /RELATE -->
+<!-- HOW-IT-WORKS -->
+<section class="how" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">איך Kivun מנווט אתכם</h2>
+    <p class="section-sub">בדיוק כמו ניווט - אתם קובעים לאן, הוא דואג להגיע לשם.</p>
+    <div class="how-grid">
+      <div class="how-card how-card--featured" data-reveal>
+        <span class="how-icon how-icon--brand">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6" cy="4" r="2.1" fill="#fff" stroke="none"/><circle cx="6" cy="12" r="2.1" fill="#fff" stroke="none"/><circle cx="6" cy="20" r="2.1" fill="#fff" stroke="none"/><path d="M6 6v4M6 14v4"/>
+          </svg>
+        </span>
+        <div class="how-card-text">
+          <h3>לא עוד טופס ריק</h3>
+          <p>תכנון שנתי, חודשי, לכל אירוע, גיוס תרומות ומעקב - מלווה אתכם צעד-צעד, עם הכוונה ודוגמה אמיתית בכל שלב.</p>
+        </div>
+      </div>
+      <div class="how-card how-card--featured" data-reveal>
+        <span class="how-icon how-icon--gold">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><path d="M8.5 14l2 2 4-4"/>
+          </svg>
+        </span>
+        <div class="how-card-text">
+          <h3>הלוח כבר יודע</h3>
+          <p>חג, צום, ראש חודש וזמני הדלקת נרות - מדויק למיקום שלכם, אוטומטית.</p>
+        </div>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--user">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 9.5l1.5 1.5 3-3"/><path d="M7.5 15.5l1.5 1.5 3-3"/>
+          </svg>
+        </span>
+        <h3>היום שלכם כבר מסודר</h3>
+        <p>מסך "היום" מרכז את המסלול היומי שלכם ומזכיר לכם לתכנן בדיוק ברגע הנכון.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--chabad">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 10a6 6 0 1112 0c0 4.5 1.5 6 1.5 6h-15S6 14.5 6 10z"/><path d="M10 19a2 2 0 004 0"/>
+          </svg>
+        </span>
+        <h3>התזכורת מגיעה לבד</h3>
+        <p>אוטומטית מהלוח - חג, צום, ר״ח - וגם תזכורות אישיות שאתם קובעים בעצמכם. תמיד בול בזמן.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--parasha">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3.3M12 17.7V21M3 12h3.3M17.7 12H21"/>
+          </svg>
+        </span>
+        <h3>גם הגיוס מתוכנן</h3>
+        <p>עמוד תכנון ייעודי לגיוס תרומות - יעדים ומעקב לאורך השנה, לצד כל שאר התכנון שלכם, לא בדף אקסל נפרד שמתפזר.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--roshchodesh">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6"/><path d="M12 3v12"/><path d="M7.5 7.5L12 3l4.5 4.5"/>
+          </svg>
+        </span>
+        <h3>יוצא ישר מהטלפון</h3>
+        <p>שולחים את התכנון בוואטסאפ או כ-PDF מעוצב, או מסנכרנים את השנה כולה ליומן גוגל - נקי, גם בסנכרון החוזר.</p>
+      </div>
+    </div>
+    <p class="how-help">וכשתקועים? מרכז עזרה מובנה עם עשרות הסברים, ממש בתוך האפליקציה.</p>
+    <div class="how-shots">
+      <figure class="how-shot" data-reveal>
+        <img src="assets/screenshot-today.png" width="640" height="1390" alt="מסך היום באפליקציית Kivun, עם המסלול היומי והתזכורות">
+        <figcaption>היום</figcaption>
+      </figure>
+      <figure class="how-shot how-shot--mid" data-reveal>
+        <img src="assets/screenshot-calendar.png" width="640" height="1390" alt="מסך לוח השנה העברי באפליקציית Kivun">
+        <figcaption>לוח השנה</figcaption>
+      </figure>
+      <figure class="how-shot" data-reveal>
+        <img src="assets/screenshot-planning.png" width="640" height="1390" alt="מסך התכנון המודרך באפליקציית Kivun">
+        <figcaption>תכנון</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- /HOW-IT-WORKS -->
+<!-- START-STEPS -->
+<section class="steps">
+  <div class="wrap">
+    <h2 class="section-title">המסלול שלכם, ב-3 תחנות</h2>
+    <div class="steps-row">
+      <div class="step" data-reveal style="--seg:0">
+        <span class="step-num">1</span>
+        <h3>תחנה 1: מסמנים יעד</h3>
+        <p>מורידים את Kivun ומזינים את מיקום השליחות - שאלה אחת, פעם אחת. מכאן, Kivun מכוון.</p>
+      </div>
+      <div class="step" data-reveal style="--seg:1">
+        <span class="step-num">2</span>
+        <h3>תחנה 2: המסלול נבנה לבד</h3>
+        <p>חג, צום, ראש חודש וזמני הדלקת נרות - כל השנה כבר על המסלול, בלי שהזנתם שורה אחת.</p>
+      </div>
+      <div class="step" data-reveal>
+        <span class="step-num">3</span>
+        <h3>תחנה 3: מתחילים לנווט</h3>
+        <p>שנה, חודש, אירוע קרוב או גיוס - בוחרים איפה מתחילים ו-Kivun מוביל אתכם צעד אחר צעד.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /START-STEPS -->
+<!-- STORY -->
+<section class="story" data-reveal>
+  <div class="wrap">
+    <div class="story-card">
+      <span class="story-quote" aria-hidden="true">”</span>
+      <h2 class="section-title">מי בנתה את Kivun</h2>
+      <p>Kivun לא נולד במעבדה. הוא נבנה אחרי <span class="count-num" data-count-to="7">7</span> שנים שבהן אני מלווה שלוחים ובתי חב״ד בניהול המשרד והמערכות שלהם - ומהניסיון האישי שלי כשליחה, שם למדתי כמה קל לתרומה, ליעד או לתאריך חשוב ליפול בין הכיסאות.</p>
+      <p>אז בניתי את הכלי שהייתי רוצה שיהיה לי אז. השנה, אחרי שנתיים שבהם זה היה רק דף, הוא סוף סוף אפליקציה אמיתית.</p>
+    </div>
+  </div>
+</section>
+<!-- /STORY -->
+<!-- TRUST -->
+<section class="trust" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">פרטיות קודם כל</h2>
+    <div class="trust-card">
+      <p>Kivun שומר הכל במכשיר שלכם בלבד. בלי שרת, בלי ענן, בלי צד שלישי שרואה את התרומות או התכנון שלכם. וביום שהאינטרנט נופל - היומן שלכם ממשיך לעבוד בדיוק כרגיל.</p>
+    </div>
+  </div>
+</section>
+<!-- /TRUST -->
+<!-- PRICING -->
+<section class="pricing" data-reveal>
+  <div class="wrap">
+    <div class="pricing-card">
+      <h2 class="section-title" style="color:#fff">המחיר</h2>
+      <div class="price">₪<span class="count-num" data-count-to="99.90" data-decimals="2">99.90</span> <small>לשנה</small></div>
+      <p>שבוע ראשון חינם. ביטול בכל עת דרך החנות.</p>
+      <div class="store-row">
+        <a class="btn-store" href="#app-store-pending" data-store="appstore">הורידו מ-App Store</a>
+        <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Google Play - בקרוב</span>
+      </div>
+      <p class="pricing-note">בלי הפתעות בחיוב - הכל דרך App Store או Google Play, כמו כל מנוי אחר בטלפון שלכם.</p>
+    </div>
+  </div>
+</section>
+<!-- /PRICING -->
+<!-- FAQ -->
+<section class="faq" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">שאלות נפוצות</h2>
+    <div class="faq-list">
+      <details class="faq-item" data-reveal>
+        <summary>המידע שלכם בטוח?</summary>
+        <p>כן. Kivun שומר הכל במכשיר שלכם בלבד - בלי שרת, בלי ענן, בלי צד שלישי. עובד גם בלי אינטרנט.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>איך מבטלים את המנוי?</summary>
+        <p>דרך הגדרות המנוי בחנות (App Store או Google Play) - בדיוק כמו כל מנוי אחר בטלפון. אין צורך לפנות אלינו.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>באילו מכשירים זה עובד?</summary>
+        <p>אייפון ואנדרואיד, בגרסת מערכת הפעלה עדכנית. אין גרסת מחשב.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>זה מחליף את יומן גוגל שלי?</summary>
+        <p>לא מחליף - מתחבר אליו. אפשר לסנכרן את כל הלוח השנתי ישר ליומן גוגל ולהמשיך להשתמש בו כרגיל.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>מה קורה אם מחליפים טלפון?</summary>
+        <p>התכנון שלכם מגובה. משחזרים את הגיבוי במכשיר החדש וממשיכים בדיוק מאיפה שעצרתם.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- /FAQ -->
+<!-- FINAL-CTA -->
+<section class="final-cta" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">מוכנים לתת לשליחות שלכם כיוון?</h2>
+    <div class="store-row">
+      <a class="btn-store" href="#app-store-pending" data-store="appstore">הורידו מ-App Store</a>
+      <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Google Play - בקרוב</span>
+    </div>
+  </div>
+</section>
+<!-- /FINAL-CTA -->
 </main>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <img class="footer-logo" src="assets/logo.png" width="423" height="470" alt="Kivun - היומן שמנווט את השליחות שלך">
+    <p class="footer-contact">אני כאן לכל שאלה או בקשה, פסי<br><a href="mailto:youroffice770@gmail.com">youroffice770@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="terms.html">תנאי שימוש</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+    </div>
+    <p class="footer-copyright">© Kivun</p>
+  </div>
+</footer>
+<!-- /FOOTER -->
+<script src="script.js"></script>
 </body>
 </html>
