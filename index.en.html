@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<script>document.documentElement.className += " js";</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kivun - The Calendar That Navigates Your Shlichus</title>
+<meta name="description" content="Guided planning, an automatic Chabad calendar, and reminders that land right on time - all in one app for shluchim and shluchos. First week free.">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="canonical" href="https://kivunapp.com/index.en.html">
+<link rel="alternate" hreflang="he" href="https://kivunapp.com/">
+<link rel="alternate" hreflang="en" href="https://kivunapp.com/index.en.html">
+<link rel="alternate" hreflang="x-default" href="https://kivunapp.com/">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-row">
+    <a class="brand" href="#top" aria-label="Kivun - back to top">
+      <svg width="32" height="32" viewBox="0 0 100 100" aria-hidden="true">
+        <defs><linearGradient id="pinGrad-header" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#3B7BFF"/><stop offset="1" stop-color="#285ABC"/>
+        </linearGradient></defs>
+        <path d="M50 8C31 8 16 22 16 41c0 22 26 43 34 50 8-7 34-28 34-50C84 22 69 8 50 8Z" fill="url(#pinGrad-header)"/>
+        <g transform="translate(50 40) scale(1.16) translate(-50 -40)" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M37 40 L46 49 L65 30"/>
+          <path d="M65 30 l-14 0.7 M65 30 l-0.7 14"/>
+        </g>
+      </svg>
+      <span class="brand-name">Kivun</span>
+    </a>
+    <div class="header-actions">
+      <a class="lang-switch" href="index.html">עברית</a>
+      <a class="btn btn-primary btn-sm" href="#hero-stores">Get Kivun</a>
+    </div>
+  </div>
+</header>
+<main>
+<!-- HERO -->
+<section class="hero" id="top">
+  <svg class="hero-route" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="hero-route-line" d="M40 340 C 200 260, 260 320, 380 220 S 640 80, 760 100" />
+  </svg>
+  <span class="hero-route-dot" aria-hidden="true"></span>
+  <div class="wrap hero-row">
+    <div class="hero-copy">
+      <span class="badge">✨ First week free</span>
+      <h1><span class="hero-word hero-word-1">Your shlichus</span><br><span class="hero-word hero-word-2">has direction</span></h1>
+      <p class="hero-sub">Kivun walks with you through the whole year - helping you plan, set goals, and actually follow through. Not another blank calendar you have to fill in yourself - it already builds your route and guides you, one step at a time.</p>
+      <div class="store-row" id="hero-stores">
+        <!-- STORE-LINK: App Store - להחליף כשהאפליקציה מאושרת -->
+        <a class="btn-store" href="#app-store-pending" data-store="appstore">Download on the App Store</a>
+        <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Coming to Google Play</span>
+      </div>
+    </div>
+    <div class="hero-demo">
+      <span class="demo-tip">👆 Tap to check off a task</span>
+      <div class="demo-card">
+        <div class="demo-head"><span>Your day · Thursday</span><span class="demo-stamp">Updated just now</span></div>
+        <div class="demo-body">
+          <div class="demo-item" style="animation-delay:.15s">
+            <span class="demo-dot" style="background:#285ABC">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3.3M12 17.7V21M3 12h3.3M17.7 12H21"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>🧭 Time to plan your year</b><span>For 5787</span></span>
+          </div>
+          <button type="button" class="demo-item demo-task" style="animation-delay:.55s" aria-pressed="false">
+            <span class="demo-dot" style="background:#FF5D8F">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 9.5l1.5 1.5 3-3"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>Call a donor</b><span>Today</span></span>
+          </button>
+          <button type="button" class="demo-item demo-task" style="animation-delay:.95s" aria-pressed="false">
+            <span class="demo-dot" style="background:#FF5D8F">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 12.5l1.5 1.5 3-3"/>
+              </svg>
+            </span>
+            <span class="demo-text"><b>Prep the Shabbat meal</b><span>Tomorrow</span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /HERO -->
+<!-- RELATE -->
+<section class="relate" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">Sound familiar?</h2>
+    <button type="button" class="relate-toggle" aria-pressed="false">
+      <span class="relate-toggle-label relate-toggle-label--before">Chaotic</span>
+      <span class="relate-toggle-track" aria-hidden="true"><span class="relate-toggle-thumb"></span></span>
+      <span class="relate-toggle-label relate-toggle-label--after">With Kivun</span>
+    </button>
+    <ul class="relate-list">
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">Pledges and donations scattered across spreadsheets, WhatsApp, and your head</span><span class="relate-after">Every pledge and donation in one place, scheduled and up to date</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">Your goals and tasks stay stuck in your head</span><span class="relate-after">Your goals are scheduled, with a reminder right when you need it</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">Every holiday or event feels like it sneaks up on you</span><span class="relate-after">Every holiday and event is ready ahead of time, no surprises</span></li>
+      <li data-reveal><span class="relate-x" aria-hidden="true">✕</span><span class="relate-before">You're doing it all alone, with no room to breathe</span><span class="relate-after">Kivun remembers for you, so you can finally breathe</span></li>
+    </ul>
+  </div>
+</section>
+<!-- /RELATE -->
+<!-- HOW-IT-WORKS -->
+<section class="how" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">How Kivun guides you</h2>
+    <p class="section-sub">Just like navigation - you set the destination, it gets you there.</p>
+    <div class="how-grid">
+      <div class="how-card how-card--featured" data-reveal>
+        <span class="how-icon how-icon--brand">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="6" cy="4" r="2.1" fill="#fff" stroke="none"/><circle cx="6" cy="12" r="2.1" fill="#fff" stroke="none"/><circle cx="6" cy="20" r="2.1" fill="#fff" stroke="none"/><path d="M6 6v4M6 14v4"/>
+          </svg>
+        </span>
+        <div class="how-card-text">
+          <h3>No more blank forms</h3>
+          <p>Yearly, monthly, per-event, fundraising, and check-in planning - guided step by step, with real direction and examples at every stage.</p>
+        </div>
+      </div>
+      <div class="how-card how-card--featured" data-reveal>
+        <span class="how-icon how-icon--gold">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17"/><path d="M8 3v4M16 3v4"/><path d="M8.5 14l2 2 4-4"/>
+          </svg>
+        </span>
+        <div class="how-card-text">
+          <h3>The calendar already knows</h3>
+          <p>Holidays, fasts, Rosh Chodesh, and candle-lighting times - accurate to your location, automatically.</p>
+        </div>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--user">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="4" y="4" width="16" height="16" rx="2.5"/><path d="M7.5 9.5l1.5 1.5 3-3"/><path d="M7.5 15.5l1.5 1.5 3-3"/>
+          </svg>
+        </span>
+        <h3>Your day is already sorted</h3>
+        <p>The Today screen centers your daily route and nudges you to plan at exactly the right moment.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--chabad">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 10a6 6 0 1112 0c0 4.5 1.5 6 1.5 6h-15S6 14.5 6 10z"/><path d="M10 19a2 2 0 004 0"/>
+          </svg>
+        </span>
+        <h3>Reminders show up on their own</h3>
+        <p>Automatic from the calendar - holidays, fasts, Rosh Chodesh - plus personal reminders you set yourself. Always right on time.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--parasha">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="7.5"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v3.3M12 17.7V21M3 12h3.3M17.7 12H21"/>
+          </svg>
+        </span>
+        <h3>Fundraising gets planned too</h3>
+        <p>A dedicated fundraising planning page - goals and check-ins all year, right alongside the rest of your planning, not scattered in a separate spreadsheet.</p>
+      </div>
+      <div class="how-card" data-reveal>
+        <span class="how-icon how-icon--roshchodesh">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 12v6a2 2 0 002 2h12a2 2 0 002-2v-6"/><path d="M12 3v12"/><path d="M7.5 7.5L12 3l4.5 4.5"/>
+          </svg>
+        </span>
+        <h3>It goes straight out of your phone</h3>
+        <p>Send your plan over WhatsApp or as a polished PDF, or sync the whole year to Google Calendar - clean, even the second time around.</p>
+      </div>
+    </div>
+    <p class="how-help">Stuck on something? A built-in help center with dozens of guides, right inside the app.</p>
+    <div class="how-shots">
+      <figure class="how-shot" data-reveal>
+        <img src="assets/screenshot-today-en.png" width="640" height="1390" alt="The Today screen in the Kivun app, with the daily route and reminders">
+        <figcaption>Today</figcaption>
+      </figure>
+      <figure class="how-shot how-shot--mid" data-reveal>
+        <img src="assets/screenshot-calendar-en.png" width="640" height="1390" alt="The Hebrew calendar screen in the Kivun app">
+        <figcaption>Calendar</figcaption>
+      </figure>
+      <figure class="how-shot" data-reveal>
+        <img src="assets/screenshot-planning-en.png" width="640" height="1390" alt="The guided planning screen in the Kivun app">
+        <figcaption>Planning</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+<!-- /HOW-IT-WORKS -->
+<!-- START-STEPS -->
+<section class="steps">
+  <div class="wrap">
+    <h2 class="section-title">Your route, in 3 stops</h2>
+    <div class="steps-row">
+      <div class="step" data-reveal style="--seg:0">
+        <span class="step-num">1</span>
+        <h3>Stop 1: Set your destination</h3>
+        <p>Download Kivun and enter your shlichus location - one question, one time. From here, Kivun takes the wheel.</p>
+      </div>
+      <div class="step" data-reveal style="--seg:1">
+        <span class="step-num">2</span>
+        <h3>Stop 2: Your route builds itself</h3>
+        <p>Holidays, fasts, Rosh Chodesh, candle-lighting - the whole year is already on your route, before you've typed a single line.</p>
+      </div>
+      <div class="step" data-reveal>
+        <span class="step-num">3</span>
+        <h3>Stop 3: Start navigating</h3>
+        <p>Yearly, monthly, an upcoming event, or fundraising - pick where to start and Kivun guides you, step by step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /START-STEPS -->
+<!-- STORY -->
+<section class="story" data-reveal>
+  <div class="wrap">
+    <div class="story-card">
+      <span class="story-quote" aria-hidden="true">”</span>
+      <h2 class="section-title">Who built Kivun</h2>
+      <p>Kivun wasn't built in a lab. It came out of <span class="count-num" data-count-to="7">7</span> years of helping shluchim and Chabad Houses run their office and systems - and out of my own experience as a shlucha, where I learned firsthand how easily a donation, a goal, or an important date can fall through the cracks.</p>
+      <p>So I built the tool I wish I'd had back then. This year, after two years of it being just a page, it's finally a real app.</p>
+    </div>
+  </div>
+</section>
+<!-- /STORY -->
+<!-- TRUST -->
+<section class="trust" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">Privacy first</h2>
+    <div class="trust-card">
+      <p>Kivun keeps everything on your device only. No server, no cloud, no third party ever sees your donations or your planning. And on the day the internet goes down, your calendar keeps working exactly the same.</p>
+    </div>
+  </div>
+</section>
+<!-- /TRUST -->
+<!-- PRICING -->
+<section class="pricing" data-reveal>
+  <div class="wrap">
+    <div class="pricing-card">
+      <h2 class="section-title" style="color:#fff">Pricing</h2>
+      <div class="price">Free <small>for your first week</small></div>
+      <p>Then one annual subscription, billed automatically in your own currency by the App Store or Google Play. Cancel anytime, right in the store.</p>
+      <div class="store-row">
+        <a class="btn-store" href="#app-store-pending" data-store="appstore">Download on the App Store</a>
+        <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Coming to Google Play</span>
+      </div>
+      <p class="pricing-note">No billing surprises - everything runs through the App Store or Google Play, just like any other subscription on your phone.</p>
+    </div>
+  </div>
+</section>
+<!-- /PRICING -->
+<!-- FAQ -->
+<section class="faq" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">Frequently asked questions</h2>
+    <div class="faq-list">
+      <details class="faq-item" data-reveal>
+        <summary>Is my data safe?</summary>
+        <p>Yes. Kivun keeps everything on your device only - no server, no cloud, no third party. It works without internet too.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>How do I cancel my subscription?</summary>
+        <p>Through your subscription settings in the App Store or Google Play - exactly like any other subscription on your phone. No need to contact us.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>What devices does it work on?</summary>
+        <p>iPhone and Android, on a reasonably current OS version. There's no desktop version.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>Does this replace my Google Calendar?</summary>
+        <p>It doesn't replace it - it connects to it. You can sync your whole year straight into Google Calendar and keep using it exactly as you do now.</p>
+      </details>
+      <details class="faq-item" data-reveal>
+        <summary>What happens if I switch phones?</summary>
+        <p>Your planning is backed up. Restore the backup on your new device and pick up exactly where you left off.</p>
+      </details>
+    </div>
+  </div>
+</section>
+<!-- /FAQ -->
+<!-- FINAL-CTA -->
+<section class="final-cta" data-reveal>
+  <div class="wrap">
+    <h2 class="section-title">Ready to give your shlichus direction?</h2>
+    <div class="store-row">
+      <a class="btn-store" href="#app-store-pending" data-store="appstore">Download on the App Store</a>
+      <span class="btn-store btn-store--soon" data-store="googleplay" aria-disabled="true">Coming to Google Play</span>
+    </div>
+  </div>
+</section>
+<!-- /FINAL-CTA -->
+</main>
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="wrap footer-row">
+    <img class="footer-logo" src="assets/logo.png" width="423" height="470" alt="Kivun - the calendar that navigates your shlichus">
+    <p class="footer-contact">I'm here for any question or request - Pesya<br><a href="mailto:youroffice770@gmail.com">youroffice770@gmail.com</a></p>
+    <div class="footer-links">
+      <a href="terms.en.html">Terms of Use</a>
+      <a href="privacy.en.html">Privacy Policy</a>
+    </div>
+    <p class="footer-copyright">© Kivun</p>
+  </div>
+</footer>
+<!-- /FOOTER -->
+<script src="script.js"></script>
+</body>
+</html>

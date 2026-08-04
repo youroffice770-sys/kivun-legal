@@ -72,18 +72,31 @@
 (function () {
   "use strict";
 
-  // The hero demo card's "עודכן עכשיו" label is a real, one-time-computed
+  // The hero demo card's freshness label is a real, one-time-computed
   // timestamp (the visitor's own local time), not decoration - it's meant
   // to read as "this is happening right now", not as a looping/ticking
   // clock (which would be exactly the kind of small perpetual effect this
   // page deliberately avoids). It only ever gets set once, on load.
+  //
+  // Shared between index.html (he) and index.en.html (en) - the label text
+  // and time locale branch on document.documentElement.lang, so each page
+  // gets the language it's actually rendered in.
   var stamp = document.querySelector(".demo-stamp");
   if (!stamp) return;
   try {
-    var time = new Date().toLocaleTimeString("he-IL", { hour: "2-digit", minute: "2-digit" });
-    stamp.textContent = "עודכן היום · " + time;
+    var isEnglish = document.documentElement.lang === "en";
+    // hour12: false keeps this 24-hour in both locales - en-US would
+    // otherwise default to a 12-hour "09:58 PM" clock, while he-IL is
+    // already 24-hour by default; forcing it explicitly keeps the two
+    // languages' timestamps the same shape.
+    var time = new Date().toLocaleTimeString(isEnglish ? "en-US" : "he-IL", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    stamp.textContent = (isEnglish ? "Updated today · " : "עודכן היום · ") + time;
   } catch (e) {
-    /* leave the static "עודכן עכשיו" fallback already in the HTML */
+    /* leave the static freshness fallback already in the HTML */
   }
 })();
 

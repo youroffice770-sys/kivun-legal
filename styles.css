@@ -55,25 +55,61 @@ img { max-width: 100%; display: block; }
 
 .wrap { max-width: 68rem; margin: 0 auto; padding: 0 1.25rem; }
 
+/* unicode-range keeps the Hebrew and Latin subsets of each family from
+   fighting over the same characters now that both are loaded (index.html
+   uses the Hebrew ones, index.en.html uses the Latin ones, but the CSS file
+   is shared) - without it, an @font-face with no unicode-range matches every
+   codepoint, and which of two same-family/weight rules "wins" for a given
+   character is undefined. Values copied verbatim from @fontsource's own
+   combined stylesheets (node_modules/@fontsource/assistant/400.css and
+   .../frank-ruhl-libre/800.css), not invented. */
 @font-face {
   font-family: "Assistant";
   src: url("fonts/assistant-hebrew-400-normal.woff2") format("woff2");
   font-weight: 400; font-style: normal; font-display: swap;
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
 }
 @font-face {
   font-family: "Assistant";
   src: url("fonts/assistant-hebrew-600-normal.woff2") format("woff2");
   font-weight: 600; font-style: normal; font-display: swap;
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
 }
 @font-face {
   font-family: "Assistant";
   src: url("fonts/assistant-hebrew-700-normal.woff2") format("woff2");
   font-weight: 700; font-style: normal; font-display: swap;
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "Assistant";
+  src: url("fonts/assistant-latin-400-normal.woff2") format("woff2");
+  font-weight: 400; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Assistant";
+  src: url("fonts/assistant-latin-600-normal.woff2") format("woff2");
+  font-weight: 600; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
+}
+@font-face {
+  font-family: "Assistant";
+  src: url("fonts/assistant-latin-700-normal.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 @font-face {
   font-family: "Frank Ruhl Libre";
   src: url("fonts/frank-ruhl-libre-hebrew-800-normal.woff2") format("woff2");
   font-weight: 800; font-style: normal; font-display: swap;
+  unicode-range: U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F;
+}
+@font-face {
+  font-family: "Frank Ruhl Libre";
+  src: url("fonts/frank-ruhl-libre-latin-800-normal.woff2") format("woff2");
+  font-weight: 800; font-style: normal; font-display: swap;
+  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
 }
 /* Poppins ExtraBold is the real wordmark font (DESIGN.md: "הכיתוב 'Kivun'
    בגופן Poppins ExtraBold") - loaded here purely for this one header word.
@@ -94,6 +130,9 @@ img { max-width: 100%; display: block; }
 .header-row { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1.25rem; }
 .brand { display: flex; align-items: center; gap: .5rem; text-decoration: none; color: #fff; }
 .brand-name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
+.header-actions { display: flex; align-items: center; gap: 1rem; }
+.lang-switch { color: rgba(255,255,255,.72); font-size: .85rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
+.lang-switch:hover { color: #fff; text-decoration: underline; }
 
 /* buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-btn); font-weight: 700; text-decoration: none; padding: .7rem 1.3rem; font-size: .95rem; transition: transform .18s ease, box-shadow .25s ease, background .2s ease; }
@@ -294,7 +333,7 @@ section { padding: 3rem 0; }
 .demo-body { padding: .3rem; }
 .demo-item { display: flex; align-items: center; gap: .7rem; padding: .7rem 1rem; opacity: 0; animation: kvIn .5s ease forwards; width: 100%; }
 .demo-dot { width: 1.9rem; height: 1.9rem; min-width: 1.9rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: background .25s ease, transform .25s ease; }
-.demo-text { display: flex; flex-direction: column; font-size: .85rem; text-align: right; }
+.demo-text { display: flex; flex-direction: column; font-size: .85rem; text-align: start; }
 .demo-text b { font-weight: 700; color: var(--ink); transition: color .25s ease; }
 .demo-text span:last-child { font-size: .75rem; color: var(--muted); }
 
@@ -368,6 +407,12 @@ section { padding: 3rem 0; }
   transition: transform .25s cubic-bezier(.34,1.56,.64,1), background .25s ease;
 }
 .relate-toggle[aria-pressed="true"] .relate-toggle-thumb { transform: translateX(-1.1rem); background: #16A34A; }
+/* Mirrored for LTR (index.en.html) - the rule above is tuned for RTL's
+   off=right/on=left motion; without this, the thumb would rest on the wrong
+   side and slide backwards (end-to-start) instead of forwards (start-to-end)
+   when toggled on under dir="ltr". */
+[dir="ltr"] .relate-toggle-thumb { right: auto; left: .15rem; }
+[dir="ltr"] .relate-toggle[aria-pressed="true"] .relate-toggle-thumb { transform: translateX(1.1rem); }
 
 /* the list rows themselves: each swaps its before/after text when the
    section carries .is-after (CSS-only). The mark's own ✕/✓ glyph is swapped
@@ -439,7 +484,7 @@ section { padding: 3rem 0; }
    (download -> calendar builds itself -> start planning), not a wall
    of feature description. */
 .steps-row { display: flex; flex-direction: column; gap: 2rem; max-width: 22rem; margin: 0 auto; position: relative; }
-.step { position: relative; padding-inline-start: 3.75rem; text-align: right; }
+.step { position: relative; padding-inline-start: 3.75rem; text-align: start; }
 /* each station reveals on its own as you scroll past it, not the whole
    row at once - transition-delay is staggered per station so even when
    all three cross the viewport threshold close together (desktop row
