@@ -130,9 +130,20 @@ img { max-width: 100%; display: block; }
 .header-row { display: flex; align-items: center; justify-content: space-between; padding: .75rem 1.25rem; }
 .brand { display: flex; align-items: center; gap: .5rem; text-decoration: none; color: #fff; }
 .brand-name { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 1.2rem; letter-spacing: -.02em; }
-.header-actions { display: flex; align-items: center; gap: 1rem; }
-.lang-switch { color: rgba(255,255,255,.72); font-size: .85rem; font-weight: 600; text-decoration: none; transition: color .2s ease; }
-.lang-switch:hover { color: #fff; text-decoration: underline; }
+.header-actions { display: flex; align-items: center; gap: .75rem; }
+/* A small bordered pill, not plain text - without its own shape the language
+   link read as a stray, disconnected word wedged between the CTA button and
+   the brand wordmark (Pessi's direct feedback on the live site). The pill
+   echoes the existing hero .badge and .btn-store--soon treatments, so it
+   reads as an intentional, tappable control instead of dim leftover text. */
+.lang-switch {
+  display: inline-flex; align-items: center;
+  color: rgba(255,255,255,.85); font-size: .8rem; font-weight: 600;
+  text-decoration: none; border: 1px solid rgba(255,255,255,.3);
+  border-radius: 999px; padding: .3rem .75rem;
+  transition: background .2s ease, border-color .2s ease;
+}
+.lang-switch:hover { background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.45); }
 
 /* buttons */
 .btn { display: inline-flex; align-items: center; justify-content: center; border-radius: var(--radius-btn); font-weight: 700; text-decoration: none; padding: .7rem 1.3rem; font-size: .95rem; transition: transform .18s ease, box-shadow .25s ease, background .2s ease; }
