@@ -197,7 +197,6 @@ section { padding: 3rem 0; }
 .relate.is-after { background: color-mix(in srgb, #16A34A 7%, var(--bg)); }
 .how { background: color-mix(in srgb, var(--gold) 7%, var(--bg)); }
 .steps { background: color-mix(in srgb, var(--brand) 6%, var(--bg)); }
-.trust { background: color-mix(in srgb, var(--shabbat) 7%, var(--bg)); }
 
 /* hero - a real dark "atmosphere" moment (not just a light page with a
    grid texture): deep navy field, two soft color glows, big light type,
@@ -639,22 +638,6 @@ section { padding: 3rem 0; }
 @media (min-width: 760px) {
   .how-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
-/* trust */
-.trust-card {
-  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-card);
-  padding: 1.75rem; max-width: 34rem; margin: 0 auto; text-align: center;
-  box-shadow: 0 18px 40px rgba(40,90,188,.08);
-  position: relative;
-}
-.trust-card::before {
-  content: "🔒"; display: flex; align-items: center; justify-content: center;
-  width: 3rem; height: 3rem; margin: 0 auto .9rem; font-size: 1.4rem;
-  border-radius: 50%;
-  background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--shabbat) 55%, white), var(--shabbat) 78%);
-  box-shadow: 0 10px 20px rgba(20,184,166,.35);
-}
-.trust-card p { color: var(--muted); }
 
 /* story - a short, real founder note (not a testimonial, not a sales
    pitch) - genuine specific credibility is its own kind of proof. */
