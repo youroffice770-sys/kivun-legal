@@ -134,8 +134,8 @@ img { max-width: 100%; display: block; }
 /* A small bordered pill, not plain text - without its own shape the language
    link read as a stray, disconnected word wedged between the CTA button and
    the brand wordmark (Pessi's direct feedback on the live site). The pill
-   echoes the existing hero .badge and .btn-store--soon treatments, so it
-   reads as an intentional, tappable control instead of dim leftover text. */
+   echoes the existing hero .badge treatment, so it reads as an intentional,
+   tappable control instead of dim leftover text. */
 .lang-switch {
   display: inline-flex; align-items: center;
   color: rgba(255,255,255,.85); font-size: .8rem; font-weight: 600;
@@ -154,7 +154,7 @@ img { max-width: 100%; display: block; }
 
 .store-row { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
 .btn-store {
-  display: inline-flex; align-items: center; justify-content: center;
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
   background: var(--brand); color: #fff; border-radius: var(--radius-btn);
   padding: .8rem 1.6rem; font-weight: 700; text-decoration: none; font-size: .95rem;
   box-shadow: var(--glow-brand);
@@ -162,11 +162,10 @@ img { max-width: 100%; display: block; }
 }
 .btn-store:hover { background: var(--brand-2); box-shadow: var(--glow-brand-lg); transform: translateY(-3px); }
 .btn-store:active { transform: translateY(-1px) scale(.97); }
-.btn-store--soon {
-  background: var(--surface); color: var(--muted); border: 1px dashed var(--line);
-  cursor: default; box-shadow: none;
-}
-.btn-store--soon:hover { background: var(--surface); transform: none; box-shadow: none; }
+/* icon inherits the button's text color via currentColor, so it needs no
+   separate override between the dark brand-blue buttons and the white
+   .pricing-card variant below - one icon, both backgrounds. */
+.btn-store .store-icon { width: 19px; height: 19px; flex: none; }
 
 /* reveal-on-scroll (progressive enhancement, see script.js) */
 /* Custom curve, not plain `ease` - this is the entrance motion for every
@@ -696,7 +695,6 @@ section { padding: 3rem 0; }
 .pricing-card .pricing-note { color: #8792B8; font-size: .8rem; margin: 1rem 0 0; }
 .pricing-card .btn-store { background: #fff; color: var(--ink); box-shadow: 0 10px 25px rgba(0,0,0,.25); animation: none; }
 .pricing-card .btn-store:hover { background: #fff; box-shadow: 0 16px 34px rgba(0,0,0,.32); }
-.pricing-card .btn-store--soon { background: transparent; color: #C7CCDC; border-color: #3A4258; }
 
 /* faq */
 .faq-list { max-width: 40rem; margin: 0 auto; display: flex; flex-direction: column; gap: .75rem; }
