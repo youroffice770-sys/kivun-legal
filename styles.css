@@ -24,6 +24,7 @@
   --shabbat: #14B8A6;
   --parasha: #7C53D6;
   --user: #FF5D8F;
+  --birthday: #F2994A;
   --radius-card: 1.25rem;
   --radius-hero: 1.875rem;
   --radius-btn: 0.75rem;
@@ -572,6 +573,8 @@ section { padding: 3rem 0; }
 .how-card:nth-child(4) { border-top: 3px solid var(--chabad); }
 .how-card:nth-child(5) { border-top: 3px solid var(--parasha); }
 .how-card:nth-child(6) { border-top: 3px solid var(--roshchodesh); }
+.how-card:nth-child(7) { border-top: 3px solid var(--birthday); }
+.how-card:nth-child(8) { border-top: 3px solid var(--shabbat); }
 .how-icon { width: 2.75rem; height: 2.75rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; box-shadow: 0 10px 20px rgba(30,42,68,.2); }
 .how-icon--gold { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--gold) 55%, white), var(--gold) 78%); box-shadow: 0 10px 20px rgba(239,166,54,.35); }
 .how-icon--brand { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--brand) 55%, white), var(--brand) 78%); box-shadow: 0 10px 20px rgba(40,90,188,.35); }
@@ -579,6 +582,8 @@ section { padding: 3rem 0; }
 .how-icon--roshchodesh { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--roshchodesh) 55%, white), var(--roshchodesh) 78%); box-shadow: 0 10px 20px rgba(58,166,224,.35); }
 .how-icon--user { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--user) 55%, white), var(--user) 78%); box-shadow: 0 10px 20px rgba(255,93,143,.35); }
 .how-icon--parasha { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--parasha) 55%, white), var(--parasha) 78%); box-shadow: 0 10px 20px rgba(124,83,214,.35); }
+.how-icon--birthday { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--birthday) 55%, white), var(--birthday) 78%); box-shadow: 0 10px 20px rgba(242,153,74,.35); }
+.how-icon--widget { background: radial-gradient(circle at 32% 28%, color-mix(in srgb, var(--shabbat) 55%, white), var(--shabbat) 78%); box-shadow: 0 10px 20px rgba(20,184,166,.35); }
 .how-card h3 { font-size: 1.05rem; margin-bottom: .4rem; }
 .how-card p { color: var(--muted); font-size: .9rem; }
 
